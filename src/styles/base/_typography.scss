@@ -1,0 +1,39 @@
+@use '../abstracts/mixins' as *;
+
+body,button,input,span {
+  font-family: var(--font-titillium-web);
+}
+
+@for $i from 1 through 6 {
+  h#{$i} {
+    font-size: #{7/($i + 1)}rem;
+    font-family: var(--font-goldman), Helvetica, sans-serif;
+    padding: #{3/($i + 6)}rem;
+
+    @include respond-to('medium') {
+      //font-size: #{5/$i}rem;
+      font-size: #{8/($i + 1)}rem;
+      padding: #{4/($i + 6)}rem;
+    }
+
+    @include respond-to('large') {
+      // font-size: #{6/$i}rem;
+      font-size: #{9/($i + 1)}rem;
+      padding: #{5/($i + 6)}rem;
+    }
+  }
+}
+
+p {
+  font-size: 1rem;
+  padding: .3em;
+  max-width: 75ch;
+
+  @include respond-to('medium') {
+    font-size: 1.125rem;
+  }
+
+  @include respond-to('large') {
+    font-size: 1.25rem;
+  }
+}

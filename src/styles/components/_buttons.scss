@@ -1,0 +1,16 @@
+// Button.module.scss
+@use '../abstracts/mixins';
+
+.button {
+  padding: .5em;
+  border-radius: .2em;
+  transition: all .1s ease-out;
+
+  @include mixins.respond-to('medium') {
+    padding: .75em;
+  }
+
+  @include mixins.respond-to('large') {
+    padding: 1em;
+  }
+}

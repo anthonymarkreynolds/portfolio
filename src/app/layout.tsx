@@ -1,7 +1,19 @@
-import './globals.css'
-import { Inter } from 'next/font/google'
+import '../styles/main.scss'
+import { Goldman, Titillium_Web } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
+
+const goldman = Goldman({
+  subsets: ['latin'],
+  variable: "--font-goldman",
+  weight: '400'
+})
+const titillium_Web = Titillium_Web({
+  weight: "300",
+  style: "normal",
+  display: "swap",
+  subsets: ['latin'],
+  variable: "--font-titillium-web"
+})
 
 export const metadata = {
   title: 'Create Next App',
@@ -15,7 +27,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${goldman.variable} ${titillium_Web.variable}`}>{children}</body>
     </html>
   )
 }
